@@ -1,0 +1,2 @@
+class QA < ApplicationRecord
+end
