@@ -1,3 +1,10 @@
-<h1>This is the quizzes#Index</h1>
-<p></p>
+<h1>Created Quizzes</h1>
+<p>Dare to try a one?</p>
+<% @quiz.each do |quiz| %>
+  <p><%= quiz.name %>
+    <%= link_to "Show", quiz %>
+    <%= link_to "Edit", edit_quiz_path(quiz) %>
+  </p>
+<% end %>
+
 <%= link_to "Log out", logout_path, method: :delete %>
