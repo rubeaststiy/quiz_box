@@ -5,6 +5,9 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+# admin user data
+User.create!(name: "eric kanarr", admin: "false", email: "eric@gmail.com", password_digest: "password")
+User.create!(name: "ruby gawd", admin: "true", email: "rubygawd@gmail.com", password_digest: "password")
 
 # quiz names data
 Quiz.create!(name: "Books and Authors")
