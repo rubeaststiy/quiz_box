@@ -1,0 +1,13 @@
+<hr>
+
+<h2><div class="welcome">Welcome 
+	 <% if current_user %>
+     <%= current_user.name %>
+   <% end %>
+ </div></h2>
+<p></p>
+
+<h4>user's scores table will go here</h4>
+
+<p></p>
+<%= link_to "Log out", logout_path, method: :delete %>
