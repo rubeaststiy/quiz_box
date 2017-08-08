@@ -1,0 +1,12 @@
+<ul>
+<% @quiz.questions.each do |question| %>
+  <li><%= question.question %></li>
+  <br>
+  <li><%= question.answer1 %></li>
+  <li><%= question.answer2 %></li>
+  <li><%= question.answer3 %></li>
+  <li><%= question.correct4 %></li>
+  <br>
+
+<% end %>
+</ul>

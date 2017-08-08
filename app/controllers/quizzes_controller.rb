@@ -32,7 +32,7 @@ class QuizzesController < ApplicationController
   end
 
   def show
-    @quiz
+    @quiz = Quiz.find(params[:id])
   end
 
   def destroy
