@@ -3,8 +3,9 @@
 <% @quiz.each do |quiz| %>
   <p><%= quiz.name %>
     <%= link_to "Show", quiz %>
-    <%= link_to "Edit", edit_quiz_path(quiz) %>
   </p>
 <% end %>
+
+<%= link_to "#{current_user.name}'s Profile", profile_path %>
 
 <%= link_to "Log out", logout_path, method: :delete %>

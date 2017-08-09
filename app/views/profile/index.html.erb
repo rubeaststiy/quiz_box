@@ -1,13 +1,39 @@
 <hr>
 
-<h2><div class="welcome">Welcome 
+<h2><div class="welcome">Hello 
 	 <% if current_user %>
      <%= current_user.name %>
    <% end %>
  </div></h2>
 <p></p>
 
-<h4>user's scores table will go here</h4>
+<h4><i>...user's scores table will go here</i></h4>
+<!--
+<table>
+  <thead>
+    <tr>
+      <th class="score">Score</th>
+      <th class="quiz">Quiz Id</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <%# @scores.each do |score| %>
+      <tr>
+        <td><%#= score.score_quiz %></td>
+        <td><%#= score.quiz_id %></td>
+      </tr>
+    <%# end %>
+  </tbody>
+</table>
+-->
+
+<h3>You can take the following quizzes;</h3>
+<% @quiz.each do |quiz| %>
+  <p><%= quiz.name %>
+    <%= link_to "Take quiz", quiz %>
+  </p>
+<% end %>
 
 <p></p>
 <%= link_to "Log out", logout_path, method: :delete %>
