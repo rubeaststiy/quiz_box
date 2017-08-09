@@ -1,12 +1,11 @@
-<ul>
-<% @quiz.questions.each do |question| %>
-  <li><%= question.question %></li>
-  <br>
-  <li><%= question.answer1 %></li>
-  <li><%= question.answer2 %></li>
-  <li><%= question.answer3 %></li>
-  <li><%= question.correct4 %></li>
-  <br>
-
+<% @quiz.questions.each do |q|%>
+  <%= form_for @quiz, :url => check_answer_path do |f| %>
+  <%= f.label q.question %><br />
+    <%= f.hidden_field :question_id, :value => q.id %>
+    <%= f.radio_button :questions, "#{q.answer1}" %><%=q.answer1%><br />
+    <%= f.radio_button :questions, "#{q.answer2}" %><%=q.answer2%><br />
+    <%= f.radio_button :questions, "#{q.answer3}" %><%=q.answer3%><br />
+    <%= f.radio_button :questions, "#{q.correct4}" %><%=q.correct4%><br />
+    <%= f.submit %>
+  <% end %>
 <% end %>
-</ul>
