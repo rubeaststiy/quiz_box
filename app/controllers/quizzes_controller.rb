@@ -1,7 +1,7 @@
 class QuizzesController < ApplicationController
 
   before_action :require_user, only: [:index, :show]
-  # before_action :require_admin, only: [:new, :create, :edit, :update, :destroy, :publish]
+  before_action :require_admin, only: [:new, :create, :edit, :update, :destroy, :publish]
   before_action :set_quiz, only: [:show, :edit, :update, :destroy, :publish]
 
   def index
@@ -17,7 +17,7 @@ class QuizzesController < ApplicationController
     Question.find(params[:quiz][:question_id]).correct4
     puts params[:quiz][:question_id]
     if params[:quiz][:questions] == Question.find(params[:quiz][:question_id]).correct4
-      
+
     end
   end
 
