@@ -7,5 +7,10 @@
     <%= f.radio_button :questions, "#{q.answer3}" %><%=q.answer3%><br />
     <%= f.radio_button :questions, "#{q.correct4}" %><%=q.correct4%><br />
     <%= f.submit %>
+    <%= f.submit "clear", :type => "reset" %>
   <% end %>
+<% end %>
+<br>
+<%= form_for @quiz do |f| %>
+<%= f.submit "submit"%>
 <% end %>
